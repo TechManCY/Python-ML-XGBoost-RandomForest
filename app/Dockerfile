@@ -2,8 +2,9 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY dataPreProcessing.py .
+COPY dataCleaning.py .
+COPY XGB.py .
 
-RUN pip install psycopg2-binary pandas
+RUN pip install psycopg2-binary pandas scikit-learn xgboost imblearn scipy numpy
 
-CMD ["python", "dataPreProcessing.py"]
+CMD ["python", "XGB.py"]

@@ -135,6 +135,8 @@ def main():
     cursor.close()
     conn.close()
 
+    return oneHotEncodedDf
+
 if __name__ == "__main__":
     main()
     # run with : docker-compose run --rm app python XGB.py

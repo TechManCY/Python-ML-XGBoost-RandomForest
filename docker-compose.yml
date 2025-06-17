@@ -34,3 +34,28 @@ networks:
 
 #volumes:
 #  postgres_data:
+
+#version: "3.8"
+#services:
+#  preprocessing:
+#    build: ./preprocessing
+#    command: python preprocess.py
+#    volumes:
+#      - ./data:/data
+
+#  ml_model:
+#    build: ./ml_model
+#    command: python train_or_infer.py
+#    depends_on:
+#      - preprocessing
+#    volumes:
+#      - ./data:/data
+
+#  postprocessing:
+#    build: ./postprocessing
+#    command: python postprocess.py
+#    depends_on:
+#      - ml_model
+#    volumes:
+#      - ./data:/data
+
