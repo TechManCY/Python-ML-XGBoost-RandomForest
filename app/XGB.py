@@ -116,12 +116,8 @@ if __name__ == "__main__":
     printEvaluation(accuracy_smote, precision_smote, recall_smote, f1_smote , cm_smote)
     print("\n" + "="*30 + "\n")
 
-    if (f1_smote > f1):
-        best_params, best_score = hyperparameterTuning(X_train_smote, y_train_smote)
-        tunedModel = modelTuning(best_params,X_train_smote, y_train_smote)
-    else: 
-        best_params, best_score = hyperparameterTuning(X_train, y_train)
-        tunedModel = modelTuning(best_params, X_train, y_train)
+    best_params, best_score = hyperparameterTuning(X_train_smote, y_train_smote)
+    tunedModel = modelTuning(best_params,X_train_smote, y_train_smote)
     print("Best hyperparameters:", best_params)
     print("Best CV F1 score:", best_score)
         
